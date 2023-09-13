@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class OrdenaNomes {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numNomes = 5; // Número de nomes que você deseja ordenar
+        int numNomes = 5; 
 
         String[] nomes = new String[numNomes];
 
