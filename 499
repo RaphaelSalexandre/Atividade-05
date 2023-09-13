@@ -1,0 +1,53 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MenuVetor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] vetor = new int[5];
+        boolean sair = false;
+
+        while (!sair) {
+            System.out.println("MENU VETOR - FUNCAO");
+            System.out.println("1. Dados do VETOR");
+            System.out.println("2. Ordena VETOR");
+            System.out.println("3. Imprime VETOR");
+            System.out.println("4. Sai do programa");
+            System.out.print("OPÇÃO: ");
+
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("Digite 5 números inteiros:");
+                    for (int i = 0; i < 5; i++) {
+                        vetor[i] = scanner.nextInt();
+                    }
+                    break;
+
+                case 2:
+                    Arrays.sort(vetor);
+                    System.out.println("VETOR ordenado.");
+                    break;
+
+                case 3:
+                    System.out.println("Conteúdo do VETOR:");
+                    for (int i = 0; i < 5; i++) {
+                        System.out.print(vetor[i] + " ");
+                    }
+                    System.out.println();
+                    break;
+
+                case 4:
+                    sair = true;
+                    System.out.println("Saindo do programa.");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
+
+        scanner.close();
+    }
+}
