@@ -16,7 +16,7 @@ public class SubstituirCaractere {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int tamanho = 10; // Tamanho do vetor
+        int tamanho = 10; 
         char[] vetor = new char[tamanho];
 
         for (int i = 0; i < tamanho; i++) {
@@ -24,7 +24,7 @@ public class SubstituirCaractere {
             String palavra = scanner.nextLine();
             vetor = palavra.toCharArray();
 
-            char caractereSubstituir = 'a'; // Caractere a ser substituído
+            char caractereSubstituir = 'a'; 
 
             int totalSubstituicoes = substituiCaractere(vetor, vetor.length, caractereSubstituir);
 
