@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class VerificarOrdenacao {
+    public static String verificarOrdenacao(int[] vetor, int tamanho) {
+        boolean crescente = true;
+        boolean decrescente = true;
+
+        for (int i = 1; i < tamanho; i++) {
+            if (vetor[i] > vetor[i - 1]) {
+                decrescente = false;
+            } else if (vetor[i] < vetor[i - 1]) {
+                crescente = false;
+            }
+        }
+
+        if (crescente) {
+            return "ORDENAÇÃO CRESCENTE";
+        } else if (decrescente) {
+            return "ORDENAÇÃO DECRESCENTE
