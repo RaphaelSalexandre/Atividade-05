@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class SubstituirCaractere {
+    public static int substituiCaractere(char[] vetor, int tamanho, char caractere) {
+        int totalSubstituicoes = 0;
+
+        for (int i = 0; i < tamanho; i++) {
+            if (vetor[i] == caractere) {
+                vetor[i] = '*';
+                totalSubstituicoes++;
+            }
+        }
+
+        return totalSubstituicoes;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tamanho = 10; // Tamanho do vetor
+        char[] vetor = new char[tamanho];
+
+        for (int i = 0; i < tamanho; i++) {
+            System.out.print("Digite palavra em letras minusculas " + (i + 1) + ": ");
+            String palavra = scanner.nextLine();
+            vetor = palavra.toCharArray();
+
+            char caractereSubstituir = 'a'; // Caractere a ser substituído
+
+            int totalSubstituicoes = substituiCaractere(vetor, vetor.length, caractereSubstituir);
+
+            System.out.println((i + 1) + " - " + new String(vetor));
+            System.out.println("Total de caracteres substituídos: " + totalSubstituicoes);
+        }
+
+        scanner.close();
+    }
+}
