@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class OrdenaNomes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numNomes = 5; // Número de nomes que você deseja ordenar
+
+        String[] nomes = new String[numNomes];
+
+        for (int i = 0; i < numNomes; i++) {
+            System.out.print("Digite o nome: ");
+            nomes[i] = scanner.nextLine();
+        }
+
+        Arrays.sort(nomes);
+
+        System.out.println("Nomes Ordenados:");
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+
+        scanner.close();
+    }
+}
