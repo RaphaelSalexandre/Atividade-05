@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class TrocaDados {
+    public static void troca(String[] nomes, String[] enderecos, String[] profissoes, int i, int j) {
+        String tempNome = nomes[i];
+        String tempEndereco = enderecos[i];
+        String tempProfissao = profissoes[i];
+
+        nomes[i] = nomes[j];
+        enderecos[i] = enderecos[j];
+        profissoes[i] = profissoes[j];
+
+        nomes[j] = tempNome;
+        enderecos[j] = tempEndereco;
+        profissoes[j] = tempProfissao;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numRegistros = 3;
+
+        String[] nomes = new String[numRegistros];
+        String[] enderecos = new String[numRegistros];
+        String[] profissoes = new String[numRegistros];
+
+        for (int i = 0; i < numRegistros; i++) {
+            System.out.print("Digite nome: ");
+            nomes[i] = scanner.nextLine();
+            System.out.print("Digite endereco: ");
+            enderecos[i] = scanner.nextLine();
+            System.out.print("Digite profissao: ");
+            profissoes[i] = scanner.nextLine();
+        }
+
+        // Ordenação (bubble sort) dos registros pelo nome
+        for (int i = 0; i < numRegistros - 1; i++) {
+            for (int j = 0; j < numRegistros - 1 - i; j++) {
+                if (nomes[j].compareTo(nomes[j + 1]) > 0) {
+                    troca(nomes, enderecos, profissoes, j, j + 1);
+                }
+            }
+        }
+
+        // Exibição dos registros ordenados
+        for (int i = 0; i < numRegistros; i++) {
+            System.out.println(nomes[i] + " " + enderecos[i] + " " + profissoes[i]);
+        }
+
+        scanner.close();
+    }
+}
